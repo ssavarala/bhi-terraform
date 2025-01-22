@@ -1,0 +1,9 @@
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+
+# Terraform provider files
+.terraform/
+
+# ZIP files (deployment artifacts)
+*.zip
