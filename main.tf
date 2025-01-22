@@ -85,6 +85,12 @@ resource "aws_iam_role_policy_attachment" "attach_lambda_management_policy" {
   policy_arn = aws_iam_policy.lambda_management_policy.arn
 }
 
+data "archive_file" "zip_the_python_code" {
+ type        = "zip"
+ source_dir  = "${path.module}/python/"
+ output_path = "${path.module}/python/hello-python.zip"
+}
+
 # Lambda Function
 resource "aws_lambda_function" "python_lambda" {
   function_name = "python_lambda_function"
